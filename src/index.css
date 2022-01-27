@@ -27,15 +27,6 @@ ul {
   padding: 0 20px;
 }
 
-.card {
-  background-color: #fff;
-  color: #333;
-  border-radius: 15px;
-  padding: 40px 50px;
-  margin: 20px 0;
-  position: relative;
-}
-
 .card.reverse {
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
@@ -111,13 +102,6 @@ input {
 
 input:focus {
   outline: none;
-}
-
-.feedback-stats {
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .num-display {
