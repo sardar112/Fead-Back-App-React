@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import './FeedBackItem.css';
 
-import Card from '../../shared/card/Card';
+import Card from '../../Shared/card/Card';
 function FeedBackItem({ feedBackItem, deleteFeedback }) {
   return (
     <Card className='card'>

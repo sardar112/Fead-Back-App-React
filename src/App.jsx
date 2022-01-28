@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-import Header from './components/Layouts/header/Header';
-import Footer from './components/Layouts/footer/Footer';
-import FeedBackList from './components/Pages/feedBackList/FeedBackList';
-import FeedBackStats from './components/Pages/feedBackStats/FeedBackStats';
+import Header from './Layouts/header/Header';
+import Footer from './Layouts/footer/Footer';
+import FeedBackList from './Components/feedBackList/FeedBackList';
+import FeedBackStats from './Components/feedBackStats/FeedBackStats';
 
-import FeedbackData from './utils/data/FeedbackData';
+import FeedbackData from './Utils/data/FeedbackData';
 
 function App() {
   const [feedback, setFeedback] = useState(FeedbackData);
