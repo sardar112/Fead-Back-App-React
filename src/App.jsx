@@ -4,6 +4,7 @@ import Header from './Layouts/header/Header';
 import Footer from './Layouts/footer/Footer';
 import FeedBackList from './Components/feedBackList/FeedBackList';
 import FeedBackStats from './Components/feedBackStats/FeedBackStats';
+import FeedBackForm from './Components/feedBackForm/FeedBackForm';
 
 import FeedbackData from './Utils/data/FeedbackData';
 
@@ -19,6 +20,8 @@ function App() {
       <Header />
 
       <div className='container'>
+        <FeedBackForm />
+
         <FeedBackStats feedback={feedback} />
         <FeedBackList
           feedBack={feedback}
