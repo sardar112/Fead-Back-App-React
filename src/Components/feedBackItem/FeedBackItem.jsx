@@ -9,7 +9,9 @@ function FeedBackItem({ feedBackItem, deleteFeedback }) {
       <button onClick={() => deleteFeedback(feedBackItem.id)} className='close'>
         <FaTimes color='purple' />
       </button>
-      <div className='text-display'>{feedBackItem.text}</div>
+      <div className='text-display' style={{ fontSize: '1.2rem' }}>
+        {feedBackItem.text}
+      </div>
       {/* <button onClick={handleClick}>Click</button> */}
     </Card>
   );
