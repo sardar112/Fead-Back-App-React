@@ -1,10 +1,7 @@
 import PropTypes from 'prop-types';
 
-import './FeedBackList.css';
-
 import FeedBackItem from '../feedBackItem/FeedBackItem';
-
-const FeedBackList = ({ feedBack, deletedItemFromList }) => {
+function FeedBackList({ feedBack, deletedItemFromList }) {
   if (!feedBack || !feedBack.length) {
     return <p>No FeedBack Yet</p>;
   }
@@ -19,7 +16,7 @@ const FeedBackList = ({ feedBack, deletedItemFromList }) => {
       ))}
     </div>
   );
-};
+}
 
 FeedBackList.propTypes = {
   feedBack: PropTypes.arrayOf(

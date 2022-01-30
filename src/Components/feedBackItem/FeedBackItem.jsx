@@ -1,8 +1,6 @@
 import { FaTimes } from 'react-icons/fa';
 import PropTypes from 'prop-types';
 
-import './FeedBackItem.css';
-
 import Card from '../../Shared/card/Card';
 function FeedBackItem({ feedBackItem, deleteFeedback }) {
   return (

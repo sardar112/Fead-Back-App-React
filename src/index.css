@@ -27,6 +27,33 @@ ul {
   padding: 0 20px;
 }
 
+header {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card {
+  background-color: #fff;
+  color: #333;
+  border-radius: 15px;
+  padding: 40px 50px;
+  margin: 20px 0;
+  position: relative;
+}
+
 .card.reverse {
   background-color: rgba(0, 0, 0, 0.4);
   color: #fff;
@@ -104,6 +131,13 @@ input:focus {
   outline: none;
 }
 
+.feedback-stats {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .num-display {
   position: absolute;
   top: -10px;
@@ -166,8 +200,8 @@ input:focus {
 
 .about-link {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 7rem;
+  right: 1rem;
   color: #fff;
   cursor: pointer;
 }

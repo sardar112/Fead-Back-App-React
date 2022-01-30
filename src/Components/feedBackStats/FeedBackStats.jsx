@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 
-import './FeedBackStats.css';
-
-const FeedBackStats = ({ feedback }) => {
+function FeedBackStats({ feedback }) {
   let average =
     feedback.reduce((accumulator, current) => {
       return accumulator + current.rating;
@@ -15,7 +13,7 @@ const FeedBackStats = ({ feedback }) => {
       <h4>Average Rating: {isNaN(average) ? 0 : average}</h4>
     </div>
   );
-};
+}
 
 FeedBackStats.propTypes = {
   feedback: PropTypes.array.isRequired,
