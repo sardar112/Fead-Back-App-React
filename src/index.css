@@ -197,6 +197,7 @@ input:focus {
   padding-top: 10px;
   text-align: center;
   color: rebeccapurple;
+  font-size: 1.4rem;
 }
 
 .about-link {

@@ -4,12 +4,13 @@ function Footer({ bgColor, textColor }) {
   const footerStyles = {
     backgroundColor: bgColor,
     color: textColor,
+    fontSize: '1.8rem',
   };
 
   return (
     <footer style={footerStyles}>
       <div className='container '>
-        <h3>Copyrights &copy; 2022</h3>
+        <h3>Copyright &copy; 2022 , Made By Sardar Saqib Raheem</h3>
       </div>
     </footer>
   );

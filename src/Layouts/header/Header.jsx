@@ -4,6 +4,7 @@ function Header({ text, bgColor, textColor }) {
   const headerStyles = {
     backgroundColor: bgColor,
     color: textColor,
+    fontSize: '1.8rem',
   };
 
   return (

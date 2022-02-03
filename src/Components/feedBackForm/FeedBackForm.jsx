@@ -1,14 +1,27 @@
-import { useState } from 'react';
+import { useState, useContext, useEffect } from 'react';
 
+import FeedBackContext from '../../Context/FeedBackContext';
 import RatingSelect from '../ratingSelect/RatingSelect';
 import Card from '../../Shared/card/Card';
 import Button from '../../Shared/button/Button';
 
-function FeedBackForm({ handleAddFeedback }) {
+// function FeedBackForm({ handleAddFeedback }) {
+function FeedBackForm() {
+  const { addFeedback, feedBackEdit, updateFeedback } =
+    useContext(FeedBackContext);
+
   const [text, setText] = useState('');
   const [btnDisabled, setBtnDisabled] = useState(true);
   const [message, setMessage] = useState('');
   const [rating, setRating] = useState(5);
+
+  useEffect(() => {
+    if (feedBackEdit.isEditable) {
+      setBtnDisabled(false);
+      setText(feedBackEdit.item.text);
+      setRating(feedBackEdit.item.rating);
+    }
+  }, [feedBackEdit]);
 
   const handleTextChange = (e) => {
     if (text === '') {
@@ -28,8 +41,13 @@ function FeedBackForm({ handleAddFeedback }) {
     e.preventDefault();
     if (text.trim().length > 10) {
       const newFeedback = { text, rating };
-      handleAddFeedback(newFeedback);
+      if (feedBackEdit.isEditable) {
+        updateFeedback(feedBackEdit.item.id, newFeedback);
+      } else {
+        addFeedback(newFeedback);
+      }
       setText('');
+      setBtnDisabled(true);
     }
   };
 
