@@ -5,8 +5,6 @@ import { createContext, useState, useEffect } from 'react';
 const FeedbackContext = createContext();
 
 export const FeedbackProvider = ({ children }) => {
-  const BASE_URL = 'http://localhost:5000';
-
   const [isLoading, setIsLoading] = useState(true);
   const [feedBack, setFeedBack] = useState([]);
   const [feedBackEdit, setFeedBackEdit] = useState({
@@ -19,16 +17,18 @@ export const FeedbackProvider = ({ children }) => {
 
   // Fetch FeedbackData
   const fetchFeedData = async () => {
-    const data = await (await fetch(`${BASE_URL}/feedback`)).json();
+    const data = await (
+      await fetch(`${process.env.REACT_APP_API_URL}/feedback`)
+    ).json();
     setFeedBack(data);
     setIsLoading(false);
   };
   //Add Feed Back
   const addFeedback = async (newFeedBack) => {
     const data = await (
-      await fetch(`${BASE_URL}/feedback`, {
+      await fetch(`${process.env.REACT_APP_API_URL}/feedback`, {
         method: 'POST',
-        headers: { contentType: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newFeedBack),
       })
     ).json();
@@ -39,7 +39,7 @@ export const FeedbackProvider = ({ children }) => {
   //Delete Feed Back
   const deletedItemFromList = async (id) => {
     if (window.confirm('Are you sure you want to delete this feedback')) {
-      await fetch(`${BASE_URL}/feedback/${id}`, {
+      await fetch(`${process.env.REACT_APP_API_URL}/feedback/${id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
       });
@@ -50,7 +50,7 @@ export const FeedbackProvider = ({ children }) => {
   //Update the feedback
   const updateFeedback = async (id, updItem) => {
     const res = await (
-      await fetch(`${BASE_URL}/feedback/${id}`, {
+      await fetch(`${process.env.REACT_APP_API_URL}/feedback/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(updItem),
